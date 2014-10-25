@@ -7,7 +7,7 @@ Summary:	Fast and powerful library for computing 2D constrained Delaunay triangu
 Name:		poly2tri-c
 Version:	0.1.0
 %define	gitdate	20140215
-Release:	%{?gitdate:0.%{gitdate}.}1
+Release:	%{?gitdate:0.%{gitdate}.}2
 Group:		System/Libraries
 License:	BSD 3-Clause License
 Url:		http://code.google.com/p/poly2tri-c/

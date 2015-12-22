@@ -3,6 +3,8 @@
 %define	libname	%mklibname %{name} %{api} %{major}
 %define	devname	%mklibname -d %{name}
 
+%define _disable_rebuild_configure 1
+
 Summary:	Fast and powerful library for computing 2D constrained Delaunay triangulations
 Name:		poly2tri-c
 Version:	0.1.0
@@ -45,6 +47,8 @@ This package contains the development files for %{name}.
 
 %prep
 %setup -q 
+# Remove enforce Werror causing ftbfs on newer gcc
+sed -i 's/Werror/Wno-error/' configure
 
 %build
 CC=gcc

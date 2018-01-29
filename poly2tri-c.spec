@@ -8,14 +8,15 @@
 Summary:	Fast and powerful library for computing 2D constrained Delaunay triangulations
 Name:		poly2tri-c
 Version:	0.1.0
-%define	gitdate	20140215
-Release:	%{?gitdate:0.%{gitdate}.}2
+%define	gitdate	20141115
+Release:	%{?gitdate:0.%{gitdate}.}1
 Group:		System/Libraries
 License:	BSD 3-Clause License
 Url:		http://code.google.com/p/poly2tri-c/
 
 # git clone https://code.google.com/p/poly2tri-c/
 Source0:	%{name}-%{version}.tar.xz
+Patch0:		poly2tri-c-0.1.0-compilefix.patch
 
 BuildRequires:	pcre-devel
 BuildRequires:	pkgconfig(glib-2.0)
@@ -47,11 +48,13 @@ This package contains the development files for %{name}.
 
 %prep
 %setup -q 
+%apply_patches
+./autogen.sh
 # Remove enforce Werror causing ftbfs on newer gcc
 sed -i 's/Werror/Wno-error/' configure
 
 %build
-CC=gcc
+#CC=gcc
 %configure
 %make
 

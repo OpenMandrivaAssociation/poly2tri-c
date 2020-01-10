@@ -48,7 +48,7 @@ This package contains the development files for %{name}.
 
 %prep
 %setup -q 
-%apply_patches
+%autopatch -p1
 ./autogen.sh
 # Remove enforce Werror causing ftbfs on newer gcc
 sed -i 's/Werror/Wno-error/' configure

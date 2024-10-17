@@ -12,7 +12,7 @@ Version:	0.1.0
 Release:	%{?gitdate:0.%{gitdate}.}2
 Group:		System/Libraries
 License:	BSD 3-Clause License
-Url:		http://code.google.com/p/poly2tri-c/
+Url:		https://code.google.com/p/poly2tri-c/
 
 # git clone https://code.google.com/p/poly2tri-c/
 Source0:	%{name}-%{version}.tar.xz
